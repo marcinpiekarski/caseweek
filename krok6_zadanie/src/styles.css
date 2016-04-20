@@ -1,0 +1,27 @@
+.low-priority {
+    color: darkgreen;
+    font-size: 12px;
+}
+
+.medium-priority {
+    color: darkgoldenrod;
+    font-size: 14px;
+}
+
+.high-priority {
+    color: red;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+input.searchbox {
+    width:300px;
+}
+
+.to-much-todos {
+    color: red;
+    font-size: 25px;
+    font-weight: bolder;
+    text-decoration: underline;
+}
+

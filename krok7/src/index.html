@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="todoApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="bower_components/angular-toastr/dist/angular-toastr.tpls.min.js"></script>
+
+    <script src="main/ToDoController.js"></script>
+    <script src="main/toDoList/ToDoListDirective.js"></script>
+    <script src="main/toDoList/ToDoListDirectiveController.js"></script>
+    <script src="main/toDoDetails/ToDoDetailsController.js"></script>
+    <script src="main/addTodo/AddToDoController.js"></script>
+    <script src="main/ToDoService.js"></script>
+    <script src="routerConfig.js"></script>
+    <script src="broadcastListener.js"></script>
+    <script src="app.js"></script>
+
+
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.min.css">
+
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+    <div style="padding:40px;">
+        <h1 class="jumbotron">ToDo App - Case Week</h1>
+        <div ui-view></div>
+    </div>
+
+</body>
+</html>

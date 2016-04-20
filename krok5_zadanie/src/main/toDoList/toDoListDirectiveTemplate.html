@@ -1,0 +1,30 @@
+<div>
+
+    <input class="form-control searchbox" type="text" ng-model="searchToDo" placeholder="Search ToDo">
+
+    <table class="table table-hover">
+        <thead>
+        <th>Checked</th>
+        <th>No.</th>
+        <th>Text</th>
+        <th>Details</th>
+        </thead>
+        <tbody>
+        <tr ng-repeat="todo in tdd.todoList | filter: {text: searchToDo}" uib-tooltip="{{todo.description}}"
+            ng-class="{'low-priority': todo.priority === 0, 'medium-priority' : todo.priority === 1, 'high-priority': todo.priority === 2}">
+            <td class="col-md-1">
+                <input type="checkbox" ng-click="tdd.deleteToDo(todo._id)">
+            </td>
+            <td class="col-md-1">{{$index + 1}}</td>
+            <td class="col-md-9">{{todo.text}}</td>
+            <td class="col-md-1">
+                <button type="button" class="btn btn-default" ng-click="tdd.showDetails(todo)">
+                    <span class="glyphicon glyphicon-zoom-in"></span>
+                </button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <button class="btn btn-default" ng-click="tdd.addToDo()">Add</button>
+</div>

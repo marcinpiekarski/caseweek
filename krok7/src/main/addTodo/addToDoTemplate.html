@@ -1,0 +1,26 @@
+<form name="addToDoForm" class="form-horizontal" ng-submit="ac.save()" novalidate>
+    <div class="form-group" ng-class="{ 'has-error' : addToDoForm.todoText.$invalid && addToDoForm.todoText.$touched}">
+        <label for="todoText" class="control-label col-md-2">Text: </label>
+        <div class="col-md-3">
+            <input type="text" name="todoText" id="todoText" ng-model="ac.todo.text" class="form-control" required ng-minlength="10" ng-maxlength="20">
+        </div>
+        <p ng-if="addToDoForm.todoText.$error.required && addToDoForm.todoText.$touched" class="help-block">Text is required</p>
+        <p ng-if="addToDoForm.todoText.$error.minlength && addToDoForm.todoText.$touched" class="help-block">Text has to contain at least 10 chars</p>
+        <p ng-if="addToDoForm.todoText.$error.maxlength && addToDoForm.todoText.$touched" class="help-block">Text is to long. Max length is 20 chars</p>
+    </div>
+    <div class="form-group" ng-class="{ 'has-error' : addToDoForm.todoDescription.$invalid && addToDoForm.todoDescription.$touched}">
+        <label for="todoDescription" class="control-label col-md-2">Description: </label>
+        <div class="col-md-3">
+            <textarea id="todoDescription" name="todoDescription" ng-model="ac.todo.description" class="form-control" required></textarea>
+        </div>
+        <p ng-if="addToDoForm.todoDescription.$error.required && addToDoForm.todoDescription.$touched" class="help-block">Description is required</p>
+    </div>
+    <div class="form-group">
+        <label for="todoPriority" class="control-label col-md-2">Priority: </label>
+        <div class="col-md-3">
+            <select id="todoPriority" ng-model="ac.todo.priority" ng-options="priority.id as priority.name for priority in ac.priorityList" class="form-control"></select>
+        </div>
+    </div>
+
+    <button class="btn btn-success pull-right" ng-disabled="addToDoForm.$invalid">Save</button>
+</form>
