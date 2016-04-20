@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="todoApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+
+    <script src="main/ToDoController.js"></script>
+    <script src="app.js"></script>
+
+
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+
+</head>
+<body>
+
+    <div ng-controller="ToDoController as td">
+
+        <h1 class="jumbotron">ToDo App - Case Week</h1>
+
+        <div>ToDo's count: <span>{{td.todoList.length}}</span></div>
+
+        <table class="table table-hover">
+            <thead>
+                <th>No.</th>
+                <th>Text</th>
+            </thead>
+            <tbody>
+                <tr ng-repeat="todo in td.todoList" uib-tooltip="{{todo.description}}">
+                    <td>{{$index + 1}}</td>
+                    <td>{{todo.text}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+</body>
+</html>

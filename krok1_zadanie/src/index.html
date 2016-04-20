@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="todoApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="main/ToDoController.js"></script>
+    <script src="app.js"></script>
+
+</head>
+<body>
+
+    <div ng-controller="ToDoController as td">
+        {{td.hellol}}
+
+        <input type="text" ng-model="td.hellol">
+
+        <button ng-click="td.clickme()">CLICK ME!</button>
+
+    </div>
+
+</body>
+</html>

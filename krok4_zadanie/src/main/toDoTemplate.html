@@ -1,0 +1,22 @@
+<div>
+    <div>ToDo's count: <span>{{td.todoList.length}}</span></div>
+
+    <table class="table table-hover">
+        <thead>
+        <th>Checked</th>
+        <th>No.</th>
+        <th>Text</th>
+        </thead>
+        <tbody>
+        <tr ng-repeat="todo in td.todoList" uib-tooltip="{{todo.description}}">
+            <td class="col-md-1">
+                <input type="checkbox" ng-click="td.deleteToDo(todo._id)">
+            </td>
+            <td class="col-md-1">{{$index + 1}}</td>
+            <td class="col-md-10">{{todo.text}}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <button class="btn btn-default" ng-click="td.addToDo()">Add</button>
+</div>

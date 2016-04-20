@@ -1,0 +1,22 @@
+<form class="form-horizontal">
+    <div class="form-group">
+        <label for="todoText" class="control-label col-md-2">Text: </label>
+        <div class="col-md-3">
+            <input type="text" id="todoText" ng-model="ac.todo.text" class="form-control">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="todoDescription" class="control-label col-md-2">Description: </label>
+        <div class="col-md-3">
+            <textarea id="todoDescription" ng-model="ac.todo.description" class="form-control"></textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="todoPriority" class="control-label col-md-2">Priority: </label>
+        <div class="col-md-3">
+            <select id="todoPriority" ng-model="ac.todo.priority" ng-options="priority.id as priority.name for priority in ac.priorityList" class="form-control"></select>
+        </div>
+    </div>
+
+    <button class="btn btn-default pull-right" ng-click="ac.save()">Save</button>
+</form>
